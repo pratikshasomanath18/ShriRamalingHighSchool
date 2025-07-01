@@ -733,62 +733,52 @@
       <!-- /Gallery Section -->
 
       <!-- Teachers Section -->
-      <section id="teachers" class="chefs section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Teachers</h2>
-          <div>
-            <span>Our Professional</span>
-            <span class="description-title">Teachers</span>
-          </div>
-        </div>
-        <style>
-          #gallery-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Two images per row */
-            justify-content: center;
-            align-items: center;
-            gap: 10px; /* Space between images */
-            max-width: 1020px; /* Ensures proper two-image layout */
-            margin: auto; /* Centers the grid */
-          }
-        
-          #gallery-preview div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        
-          #gallery-preview img {
-            width: 500px; /* Fixed width */
-            height: 500px; /* Fixed height */
-            object-fit: cover; /* Ensures the image fills the space properly */
-            border-radius: 10px; /* Optional: Adds rounded corners */
-          }
-        </style>
-        
-        <div class="row g-0" id="gallery-preview">
-            <div><img src="assets/img/Function1.jpg" alt=""></div>
-            <div><img src="assets/img/Function2.jpg" alt=""></div>             
-        </div>
+    <section id="teachers" class="chefs section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Teachers</h2>
+    <div>
+      <span>Our Professional</span>
+      <span class="description-title">Teachers</span>
+    </div>
+  </div>
 
-        <!-- <div class="container"> -------------------------------------------------------------------------------------------------->
-          
-            <!-- <div id="teacherList" class="row gy-5"> -->
-              <!-- Teachers will be dynamically loaded here -->
-           
-          <!-- </div> ---------------------------------------------------------------------------------------------------------------------->
-            
-            <!-- End Team Member -->
-         
-        </div>
-        <style>
-          .member .pic img {
-            height: 400px;
-            object-fit: cover;
-            width: 100%;
-          }
-        </style>
-      </section>
+  <div class="row g-0" id="teacher-preview">
+    <div><img src="assets/img/Function1.jpg" alt="Annual Day Function 1"></div>
+    <div><img src="assets/img/Function2.jpg" alt="Annual Day Function 2"></div>
+  </div>
+
+  <style>
+    #teacher-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      max-width: 1020px;
+      margin: auto;
+    }
+
+    #teacher-preview div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #teacher-preview img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .member .pic img {
+      height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+</section>
+
       <!-- /Chefs Section -->
 
 
