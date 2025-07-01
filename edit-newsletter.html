@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Gallery & Newsletter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+  href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+ <!-- Favicons -->
+ <link href="assets/img/book.png" rel="icon">
+ <link href="assets/img/book.png" rel="apple-touch-icon">
+  <style>
+    .edit {
+      padding: 20px;
+    }
+
+    .edit .form-label {
+      font-weight: bold;
+    }
+
+    .edit  #gallery-preview .gallery-item {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .edit   #gallery-preview img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #28a745;
+      border-radius: 5px;
+    }
+
+    .edit .delete-button {
+      margin-top: 10px;
+      color: white;
+      background-color: #dc3545;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .edit .delete-button:hover {
+      background-color: #c82333;
+    }
+
+    .edit   #message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Custom Styles for Tab Navigation */
+    .edit   .nav-tabs .nav-link {
+      color: #28a745;
+    }
+
+    .edit  .nav-tabs .nav-link.active {
+      background-color: #28a745;
+      color: white;
+    }
+
+   .edit .back-to-site {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+  .edit  .back-to-site a {
+      color: #28a745;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+ .edit   .back-to-site a:hover {
+      text-decoration: underline;
+    }
+
+ .edit   #highlights ul {
+      padding-left: 20px;
+    }
+  .edit  #highlights ul li {
+      list-style-type: disc;
+    }
+  .edit  .newsletter-card {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  .edit  .newsletter-card h5 {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  .edit  .newsletter-card p, .edit .newsletter-card ul {
+      margin-bottom: 10px;
+    }
+    .edit  .class-list {
+            list-style: none;
+            padding: 0;
+        }
+
+      .edit  .class-list li {
+            background-color: #e9ecef;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+      .edit  .class-list li button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: #dc3545;
+            padding: 5px 10px;
+        }
+
+      .edit  .student-list {
+            list-style: none;
+            padding: 0;
+        }
+
+      .edit  .student-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+       .edit .student-list li img {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+        }
+
+      .edit  .student-list li button {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            background-color: #dc3545;
+            padding: 5px 10px;
+        }
+      .edit  .class-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+    .class-card:hover {
+  transform: translateY(-5px);
+}
+
+   .class-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+   .class-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.edit  .student-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+ .edit  .student-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+ .edit  .student-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+ .edit  .student-name {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+ .edit  .class-name {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+  button {
+  background-color: #d9534f;
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+  .edit .class-header{
+    margin-bottom: 50px;
+}
+  button:hover {
+  background-color: #c9302c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .edit  .class-card {
+    padding: 15px;
+  }
+
+   .edit  .class-card h3 {
+    font-size: 1.2rem;
+  }
+
+   .edit  .student-list {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+   .edit  .student-img {
+    width: 60px;
+    height: 60px;
+  }
+
+   .edit  .student-name {
+    font-size: 0.9rem;
+  }
+}
+
+  .edit .application-card {
+        transition: all 0.3s ease;
+      }
+       .edit  .application-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+       .edit  .badge-status {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+       .edit  .actions-bar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+
+      /* Mobile-specific style for search button */
+      @media (max-width: 576px) {
+      .edit     .search-btn {
+          width: 100%; /* Ensure the search button takes full width on mobile */
+          font-size: 0.9rem; /* Make the button smaller on mobile */
+        }
+      }
+  
+  .teacher     .card, .member { margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+  .teacher     .member .pic img { width: 100%; height: auto; border-radius: 10px; }
+  .teacher    .member-info { padding: 15px; text-align: center; }
+  .teacher    .social a { margin: 0 10px; color: #333; }
+  .teacher    .social a:hover { color: #007bff; }
+  .teacher    .btn-danger { margin-top: 10px; }
+  </style>
+</head>
+<body class="edit">
+
+<!-- Tab navigation for Gallery and Newsletter Editors -->
+<ul class="nav nav-tabs" id="editorTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery-editor" type="button" role="tab" aria-controls="gallery-editor" aria-selected="true">Gallery Editor</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="newsletter-tab" data-bs-toggle="tab" data-bs-target="#newsletter-editor" type="button" role="tab" aria-controls="newsletter-editor" aria-selected="false">Newsletter Editor</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="alumni-tab" data-bs-toggle="tab" data-bs-target="#alumni-editor" type="button" role="tab" aria-controls="alumni-editor" aria-selected="false">Alumni Editor</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher-editor" type="button" role="tab" aria-controls="teacher-editor" aria-selected="false">Teachers Editor</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="application_tab" data-bs-toggle="tab" data-bs-target="#application-form" type="button" role="tab" aria-controls="application-form" aria-selected="false">Applications</button>
+  </li>
+</ul>
+
+<!-- Tab content -->
+<div class="tab-content" id="editorTabContent">
+  <!-- Gallery Editor -->
+  <div class="tab-pane fade show active" id="gallery-editor" role="tabpanel" aria-labelledby="gallery-tab">
+    <div class="container mt-4">
+      <h2 class="text-success">Manage Gallery</h2>
+      <form id="gallery-form" class="mb-4">
+        <div class="mb-3">
+          <label for="gallery-upload" class="form-label">Upload Image:</label>
+          <input type="file" id="gallery-upload" class="form-control" accept="image/*">
+        </div>
+        <div class="mb-3">
+          <label for="image-url" class="form-label">Or Enter Image URL:</label>
+          <input type="url" id="image-url" class="form-control" placeholder="Image URL">
+        </div>
+        <button type="submit" id="upload-button" class="btn btn-success">Add to Gallery</button>
+      </form>
+
+      <!-- Success/Error Message -->
+      <div id="message" class="text-center"></div>
+
+      <!-- Gallery Preview for Admin -->
+      <h3 class="text-success">Current Gallery</h3>
+      <div id="gallery-preview" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div>
+    </div>
+  </div>
+
+  <!-- Newsletter Editor -->
+  <div class="tab-pane fade" id="newsletter-editor" role="tabpanel" aria-labelledby="newsletter-tab">
+    <div class="container mt-4">
+      <h2 class="text-success">Edit Newsletter</h2>
+      <form id="newsletter-form" class="mb-4">
+        <!-- Newsletter Title -->
+    <div class="mb-3">
+      <label for="newsletterTitle" class="form-label">Newsletter Title:</label>
+      <input type="text" id="newsletterTitle" class="form-control" placeholder="Enter the title here">
+    </div>
+
+    <!-- Newsletter Description -->
+    <div class="mb-3">
+      <label for="newsletterDescription" class="form-label">Newsletter Description:</label>
+      <textarea id="newsletterDescription" class="form-control" rows="3" placeholder="Enter newsletter description here"></textarea>
+    </div>
+
+    <!-- Highlights -->
+    <div id="highlights" class="mb-3">
+      <label for="highlightInput" class="form-label">Highlights:</label>
+      <ul id="highlightList"></ul>
+      <div class="input-group">
+        <input type="text" id="highlightInput" class="form-control" placeholder="Add a highlight">
+        <button class="btn btn-primary" type="button" id="addHighlightBtn">Add</button>
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mb-3">
+      <label for="additionalInfo" class="form-label">Additional Info:</label>
+      <textarea id="additionalInfo" class="form-control" rows="3" placeholder="Enter additional details "></textarea>
+    </div>
+
+    <!-- Image/Video Upload -->
+    <div class="mb-3">
+      <label for="newsletterMedia" class="form-label">Upload Image or Video:</label>
+      <input type="file" id="newsletterMedia" class="form-control" accept="image/*, video/*">
+    </div>
+
+    <!-- Video Thumbnail -->
+    <div id="thumbnailInputContainer" style="display: none;">
+      <label for="videoThumbnail">Upload Thumbnail for Video:</label>
+      <input type="file" id="videoThumbnail" class="form-control mb-4 " accept="image/*">
+    </div>
+    
+    <button class="btn btn-success" type="submit" id="updateNewsletterBtn">Update Newsletter</button>
+      </form>
+      
+      <!-- Newsletter Preview for Admin -->
+      <h3 class="text-success mb-2">Current News Items</h3>
+      <p>Please note you can only have one newsletter at a time</p>
+      <div id="currentNewsletters" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+      </div>
+    </div>
+  </div>
+
+  <!--Alumin Editor-->
+  <div class="tab-pane fade" id="alumni-editor" role="tabpanel" aria-labelledby="alumni-tab">
+    <div class="container mt-4">
+      <h2 class="text-success">Edit Alumni</h2>
+
+      <!-- Section for Adding New Students -->
+      <div class="form-section">
+          <form id="student-form" class="mb-4">
+              <label for="class-name" class="form-label">Class Year (must be in shortened year format, e.g., "'23")</label>
+              <input type="text" class="form-control" id="class-name" class="form-control" placeholder="Enter class number (e.g '05)" required>
+
+              <label for="student-name" class="form-label mt-2">Student Name</label>
+              <input type="text" class="form-control" id="student-name" class="form-control" placeholder="Enter student name" required>
+
+              <label for="student-image" class="form-label mt-2">Student Image</label>
+              <input type="file" class="form-control" id="student-image" required>
+
+              <button  class="btn btn-success mt-3" type="submit">Add Student</button>
+          </form>
+      </div>
+
+      <!-- Section for Displaying Current Classes -->
+      <div class="current-classes">
+          <h2 class="text-success mb-2">Current Classes and Students</h2>
+          <ul class="class-list" id="class-list">
+              <!-- This is where the classes and students will be dynamically inserted -->
+          </ul>
+      </div>
+  </div>
+
+  </div>
+
+  <!--Teacher Editor-->
+  <div class="tab-pane fade" id="teacher-editor" role="tabpanel" aria-labelledby="teacher-tab">
+    <div class="container mt-4 teacher">
+      <h2 class="text-success">Edit Teacher</h2>
+
+      <!-- Add New Teacher Form -->
+    <div class="card mb-3 ">
+      <div class="card-body">
+          <h5 class="card-title">Add New Teacher</h5>
+          <form id="teacherForm">
+              <div class="form-group mb-2">
+                  <label for="name">Teacher's Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter teacher's name" required>
+              </div>
+              <div class="form-group  mb-2">
+                  <label for="position">Position</label>
+                  <input type="text" class="form-control" id="position" placeholder="Enter teacher's position" required>
+              </div>
+              <div class="form-group  mb-2">
+                  <label for="profilePic">Profile Picture</label>
+                  <input type="file" class="form-control" id="profilePic" accept="image/*" required>
+              </div>
+              <!-- Social Media Links -->
+              <div class="form-group  mb-2">
+                  <label for="twitter">Twitter URL</label>
+                  <input type="url" class="form-control" id="twitter" placeholder="Twitter profile link">
+              </div>
+              <div class="form-group  mb-2">
+                  <label for="facebook">Facebook URL</label>
+                  <input type="url" class="form-control" id="facebook" placeholder="Facebook profile link">
+              </div>
+              <div class="form-group  mb-2">
+                  <label for="instagram">Instagram URL</label>
+                  <input type="url" class="form-control" id="instagram" placeholder="Instagram profile link">
+              </div>
+              <div class="form-group  mb-2">
+                  <label for="linkedin">LinkedIn URL</label>
+                  <input type="url" class="form-control" id="linkedin" placeholder="LinkedIn profile link">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Add Teacher</button>
+          </form>
+      </div>
+  </div>
+
+      <!-- Section for Displaying Current Classes -->
+      <div class="current-classes">
+          <h2 class="text-success mb-2">Current Teachers</h2>
+          <div id="teacherList" class="row">
+
+          </div>
+      </div>
+  </div>
+
+  </div>
+
+  <!-- Application Form -->
+  <div class="tab-pane fade" id="application-form" role="tabpanel" aria-labelledby="application_tab">
+
+    <div class="container application mt-4">    
+      <h2 class="text-success mb-4">View Applications</h2>
+
+      <!-- Application Forms List -->
+      <div class="card shadow-sm ">
+
+      <div class="card-body">
+        <div id="applicationsList" class="row g-4">
+          <!-- Applications will be loaded here -->
+        </div>
+      </div>
+      </div>
+    </div>
+  <!-- Application Details Modal -->
+  <div class="modal fade" id="applicationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Application Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body" id="applicationDetails">
+          <!-- Application details will be loaded here -->
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+</div>
+
+<div class="back-to-site">
+  <a href="/">← Back to the Website</a>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="assets/js/admin.js"></script>
+
+</body>
+</html>

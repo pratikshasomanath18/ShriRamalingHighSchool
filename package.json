@@ -1,0 +1,12 @@
+{
+  "name": "school-website-main",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for a **School Website** that I developed using a combination of HTML, Bootstrap, Glistbox, AOS (Animate on Scroll), Swiper, Isotope-Layout, ImagesLoaded, and JavaScript. The project also includes a Firebase-powered **Admin Interface** for content management, enabling administrators to add or delete content, images, and more from the main website. Additionally, I integrated **Email.js** for collecting emails directly from the website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

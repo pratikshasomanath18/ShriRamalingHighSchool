@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Shri Ramaling High School</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/book.png" rel="icon">
+  <link href="assets/img/book.png" rel="apple-touch-icon">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+<style>
+ 
+
+
+#admin-login {
+  width: 100%; 
+  padding: 20px;
+}
+
+#admin-login h2 {
+  color: #ffffffef;
+  text-align: center;
+  margin-bottom: 20px;
+  
+  
+}
+
+@media (min-width: 1024px) {
+  #admin-login   .hero h2, #admin-login .hero p {
+        max-width: 100%;
+    }
+}
+
+#admin-login label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 1.1em;
+  text-align: start;
+}
+
+#admin-login input {
+  width: 100%; 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #4CAF50;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+input:focus {
+  outline: none;
+  border-color: #45a049;
+}
+
+.btn-primary {
+  width: 100%; 
+  padding: 10px;
+  background-color: #106312;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input[type="password"], input[type="text"] {
+  width: 100%;
+  padding-right: 40px; 
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #4CAF50;
+  margin-top: -6px;
+}
+
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: rgb(255, 45, 45);
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  display: none;
+  text-align: left; 
+}
+
+
+</style>
+ 
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header fixed-top">
+
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename" style="color: rgb(255, 204, 0);">Shri Ramaling High School</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+              <a href="#academics">
+                  <span>Academics</span>
+                  <!-- This is the small arrow icon beside "Academics." No changes are needed unless styling adjustments are required. -->
+                  <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <!-- This is the dropdown menu under "Academics." To add a new option, insert a new <li> item here. -->
+              <ul>
+                  <!-- Alumni Link: This link directs users to the "Discover" section on the Alumni page. 
+                       To change the text "Alumni," edit it inside the <a> tag. -->
+                  <!-- <li><a href="Alumni.html#discover">Alumni</a></li> -->
+    
+                  <!-- Application Form Primary Link: This takes users to the primary school application form. 
+                       To change the link name, replace "Application Form Primary" with the desired text. -->
+                  <li><a href="ApplicationPri.html">Application Form Primary</a></li>
+    
+                  <!-- Application Form Secondary Link: This directs users to the secondary school application form. 
+                       Edit "Application Form Secondary" to change the displayed text. -->
+                  <li><a href="ApplicationSec.html">Application Form Secondary</a></li>
+              </ul>
+          </li>                 <li><a href="#specials">Activities</a></li>
+            <!-- <li><a href="#events">News</a></li> -->
+            <li><a href="#gallery">Gallery</a></li>
+            <li class="dropdown"><a href="#"><span>Discover</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <!-- <li><a href="Alumni.html#discover">Alumni</a></li> -->
+                <li><a href="ApplicationPri.html">Application Form Primary</a></li> 
+                <li><a href="ApplicationSec.html">Application Form Secondary</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+  <main >
+     <!-- Hero Section -->
+     <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      
+
+        
+        <div class="carousel-item active">
+          <img src="../school-website-main/assets/img/other.jpg" alt="">
+          <div class="carousel-container">
+             <!-- Admin Login Page -->
+    <section id="admin-login" class="section admin">
+      <div class="container text-center" style="max-width: 500px;">
+        <h2><u>Admin Login</u></h2>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required class="form-control mb-3">
+          <p id="username-error" class="error-message text-danger">Username is incorrect.</p>
+          
+          <label for="password">Password:</label>
+          <div class="password-wrapper mb-3">
+            <input type="password" id="password" name="password" required class="form-control">
+          
+          </div>
+          <p id="password-error" class="error-message text-danger">Password is incorrect.</p>
+          
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </section>
+          </div>
+        </div><!-- End Carousel Item -->
+
+   
+
+
+      
+
+      </div>
+
+    </section><!-- /Hero Section -->
+  
+  </main>
+  
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+ 
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const usernameError = document.getElementById('username-error');
+    const passwordError = document.getElementById('password-error');
+    
+    // Ensure errors are hidden initially
+    usernameError.style.display = 'none';
+    passwordError.style.display = 'none';
+  
+    // Event listener for form submission
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents page reload
+  
+      // Reset error visibility
+      usernameError.style.display = 'none';
+      passwordError.style.display = 'none';
+  
+      // Validate credentials
+      const validUsername = 'admin';
+      const validPassword = 'yourpassword';
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+  
+      let isValid = true;
+  
+      if (username !== validUsername) {
+        usernameError.style.display = 'block';
+        isValid = false;
+      }
+  
+      if (password !== validPassword) {
+        passwordError.style.display = 'block';
+        isValid = false;
+      }
+  
+      // Redirect if valid
+      if (isValid) {
+        window.location.href = 'edit-newsletter.html';
+      }
+    });
+  </script>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDKHZ1viqinUqJcs4He9QGnq2Ld82jSt-M",
+      authDomain: "juli-tola.firebaseapp.com",
+      projectId: "juli-tola",
+      storageBucket: "juli-tola.appspot.com",
+      messagingSenderId: "452807393853",
+      appId: "1:452807393853:web:2c58c3ca257ea605f6e054",
+      measurementId: "G-FVNPXHKQLJ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
